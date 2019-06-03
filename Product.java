@@ -1,28 +1,60 @@
-package product.books.toys;
+package com.lti.training.day3.inheritance1;
 
-public class Product {
+public abstract class Product {
 
-	String productName;
-	String productUID;
-	int stock;
-	float price;
-	double billAmt;
-	String productDesc;
-	int productQty;
+	private static int sequence=1000;
 	
-	 public void dispInfo() {
-		 System.out.println("product name is "+productName);
-		 System.out.println("product UID is "+productUID);
-		 System.out.println("Stock Available:"+stock);
-		 System.out.println("Price of the Product:"+price);
-		 System.out.println("Prodcut Description:"+productDesc);
-		 System.out.println("Product Quantity:"+productQty);
-	 }
-	public String getProductDesc() {
-		return productDesc;
+	private int id = sequence++;
+	private String name;
+	private int stockInHand;
+	private double price;
+	private String description;
+	
+	
+	public Product(String name, int stockInHand, double price, String description) {
+		super();
+		this.name = name;
+		this.stockInHand = stockInHand;
+		this.price = price;
+		this.description = description;
 	}
-	public void setProductDesc(String productDesc) {
-		this.productDesc = productDesc;
+	public String getDescription() {
+		return description;
 	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getStockInHand() {
+		return stockInHand;
+	}
+	public double getPrice() {
+		return price;
+	}
+	
+   	public abstract double calculateDiscount();
+	
+	public double generateBill(int quantity) {
+		
+		if(stockInHand>=quantity) {
+		double total=(price-calculateDiscount())*quantity;
+		return total;
+		}
+		else
+			System.out.println("Stock is not available");
+		return 0;
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 }
