@@ -2,33 +2,36 @@ package com.lti.training.day6.collections;
 
 
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class UserManager {
+public class UserManager2 {
 
-	private List<User> users;
+	public Map<String, String> users;
 	
-	public UserManager() {
-		users = new ArrayList<User>();
-		users.add(new User("Shaik","1234",true));
-		users.add(new User("Rafiq","5678",false));
-		users.add(new User("Sai Priya","9012",true));
+	
+	public UserManager2() {
+	
+		users = new HashMap<String, String>();
+		users.put("Shaik","1234");
+		users.put("Rafiq","5678");
+		users.put("Sai Priya","9012");
 	}
 	
-	User u=new User();
-	
 	public boolean isValidUser(String userName,String passWord) {
-		for(User user : users)
-			if(user.getUserName().equals(userName))
-				if(user.getPassWord().equals(passWord))
-					if(user.isActive())
-						return true;
-			
-			return false;	
+	
+		if(users.containsKey(userName)) {
+				String pwd = users.get(userName);
+				if(pwd.equals(passWord))
+					return true;
+		}
+		return false;
 }
 	public static void main(String[] args) {
-		UserManager mgr = new UserManager();
-		boolean isValid = mgr.isValidUser("Shaik", "1234");
+		
+		UserManager2 mgr = new UserManager2();
+		boolean isValid = mgr.isValidUser("Shaik", "2344");
 		System.out.println(isValid);
 		
 	}
