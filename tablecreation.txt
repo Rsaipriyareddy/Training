@@ -1,0 +1,3 @@
+create table PeopleClub (id number(10) primary key,
+Firstname varchar2(50), Lastname varchar2(50),
+Dateofbirth varchar2(50), City varchar2(50));
