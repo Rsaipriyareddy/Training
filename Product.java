@@ -1,60 +1,33 @@
-package com.lti.training.day3.inheritance1;
+package com.lti.training.day7.jdbc;
 
-public abstract class Product {
+public class Product {
 
-	private static int sequence=1000;
-	
-	private int id = sequence++;
+	private int id;
 	private String name;
-	private int stockInHand;
 	private double price;
-	private String description;
-	
-	
-	public Product(String name, int stockInHand, double price, String description) {
-		super();
-		this.name = name;
-		this.stockInHand = stockInHand;
-		this.price = price;
-		this.description = description;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	private int quantity;
 	public int getId() {
 		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;
 	}
-	public int getStockInHand() {
-		return stockInHand;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public double getPrice() {
 		return price;
 	}
-	
-   	public abstract double calculateDiscount();
-	
-	public double generateBill(int quantity) {
-		
-		if(stockInHand>=quantity) {
-		double total=(price-calculateDiscount())*quantity;
-		return total;
-		}
-		else
-			System.out.println("Stock is not available");
-		return 0;
-		
+	public void setPrice(double price) {
+		this.price = price;
 	}
-	
-	
-	
-	
-	
-	
-	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 }
