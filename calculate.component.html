@@ -1,0 +1,20 @@
+<form (ngSubmit)="calculate()">
+
+        <h1>Welcome to the Calculator Component</h1>
+        <label>Enter the First Number</label>
+        <input type = "number" name = "firstnumber" [(ngModel)] = firstnumber />
+        <br />
+        
+        <label>Enter the Second Number</label>
+        <input type = "number" name = "secondnumber " [(ngModel)] = secondnumber />
+        <br />
+    
+        <button type="submit" style="background : skyblue">Operation</button> 
+        <br />
+
+
+        
+    
+    </form>
+
+    <h1 *ngIf="result" style="color : green">Result is {{result}}</h1>
