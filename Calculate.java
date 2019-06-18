@@ -10,18 +10,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloServlet
+ * Servlet implementation class Calculate
  */
-@WebServlet("/hello.servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/Calculate")
+public class Calculate extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.setContentType("text/html");
+		
 		PrintWriter out = response.getWriter();
-		out.println("<html><body>");
-		out.println(" <h1>Hello World</h1>");
-		out.println("</body></html>");
+		 
+	    String a = request.getParameter(parseInt(a));
+		String  b = request.getParameter(parseInt(b));
+		
+		if(addition.equals("yes"))
+		{
+			int c=a-b;
+		}
+		else
+			int c = a+b;
 	}
-}
 
+	private String parseInt(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

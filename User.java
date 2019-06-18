@@ -1,30 +1,30 @@
-package com.lti.training.day6.collections;
+package com.lti.training.servlet;
 
 public class User {
 
-	private String userName;
-	private String passWord;
+	private String username;
+	private String password;
 	private boolean active;
 	
-	
-	public User() {	//Default Constructor
+	public User() {
 	}
-	public User(String userName, String passWord, boolean active) {
-		this.userName = userName;
-		this.passWord = passWord;
+	public User(String username, String password, boolean active) {
+		this.username = username;
+		this.password = password;
 		this.active = active;
 	}
-	public String getUserName() {
-		return userName;
+	
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPassWord() {
-		return passWord;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public boolean isActive() {
 		return active;
@@ -32,4 +32,6 @@ public class User {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	
 }
